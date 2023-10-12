@@ -31,6 +31,7 @@ def user_login(request):
             if user is not None:
                 login(request, user)
                 messages.success(request,'loged in', 'success')
+                return redirect('home')
             else:
                 messages.error(request, 'username or pass is wrong', 'danger')
     else:
